@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="json_ajax_i18n:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/json_ajax_i18n_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="json_ajax_i18n/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

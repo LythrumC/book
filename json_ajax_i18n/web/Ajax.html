@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ajax</title>
+
+    <script type="text/javascript">
+        //在这里使用jaxaScript语言发起Ajax请求，访问服务器ajaxServlet
+        function ajaxRequest(){
+
+            //1.首先创建XMLHttpRequest
+            var xmlHttpRequest = new XMLHttpRequest();
+
+            //2.调用open()方法设置请求参数
+               //第一个参数为请求方法类型，第二个参数为服务器请求地址，第三个参数为请求是否为异步操作
+               //1.false为同步: 同步就是所有操作在一个线程，顺序执行，一个操作卡死了或在等待数据回传时，下面的代码是不会执行的
+               //2.true为异步:  相当于开启一个新的线程，不管你之前的代码在干什么，异步同样执行，之前的代码该什么时候执行就什么时候执行
+            xmlHttpRequest.open("GET","http://localhost:8080/json_ajax_i18n/ajaxServlet?action=javaScriptAjax",true);
+
+            //4.在send方法前绑定onreadystatechange事件，处理请求完成后的操作。(接受服务端返回的数据)
+            //onreadystatechange是AJAX基于响应的方法(当请求被发送到服务器并发生变化时，触发)
+            xmlHttpRequest.onreadystatechange=function (){
+
+                /** readyState              status
+                 0: 请求未初始化               200:"OK"
+                 1: 服务器连接已建立            404:"未找到页面"
+                 2: 请求已接收
+                 3: 请求处理中
+                 4: 请求已完成，且响应已就绪
+                 */
+                if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
+                    var jsonObj = JSON.parse(xmlHttpRequest.responseText);
+                    // alert("你好");
+                    document.getElementById("div_1").innerText = "编号:" + jsonObj.id + " " + "姓名:" + jsonObj.name;
+                    // alert(xmlHttpRequest.responseText)
+                    // document.getElementById("div_1").innerText = xmlHttpRequest.responseText;
+                }
+            }
+
+            //3.调用send()方法发送请求
+            xmlHttpRequest.send();
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="ajaxRequest()">Ajax Request</button>
+    <div id="div_1"></div>
+</body>
+</html>

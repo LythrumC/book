@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!--Filter_1-->
+    <filter>
+        <filter-name>Filter_1</filter-name>
+        <filter-class>com.atChenKuan.Filter.Filter_1</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter_1</filter-name>
+        <url-pattern>/target/b.jsp</url-pattern>
+    </filter-mapping>
+
+    <!--Filter_2-->
+    <filter>
+        <filter-name>Filter_2</filter-name>
+        <filter-class>com.atChenKuan.Filter.Filter_2</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filter_2</filter-name>
+        <url-pattern>/target/b.jsp</url-pattern>
+    </filter-mapping>
+
+    <!--Filter标签用于配置一个Filter过滤器-->
+    <filter>
+        <!--给Filter起一个名字-->
+        <filter-name>adminFilter</filter-name>
+        <!--配置的Filter标签的路径-->
+        <filter-class>com.atChenKuan.Filter.adminFilter</filter-class>
+        <!--初始化参数-->
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>www.baidu.com</param-value>
+        </init-param>
+    </filter>
+
+    <!--Filter-mapping配置Filter过滤器的拦截路径(受保护的文件)-->
+    <filter-mapping>
+        <filter-name>adminFilter</filter-name>
+        <!--
+           url-pattern配置拦截路径，
+           /  斜杠表示请求地址为： http://ip:port/工程路径/  映射的IDEA的web目录
+           /admin/* 表示请求地址为 http://ip:port/工程路径/admin/*  表示admin目录下的所有文件
+        -->
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!--loginServlet-->
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.atChenKuan.Servlet.loginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

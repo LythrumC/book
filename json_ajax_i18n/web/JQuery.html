@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery请求AJAX</title>
+    <script type="text/javascript" src="JQueryKit/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //Jquery框架ajax请求
+            $("#ajaxBtn").click(function (){
+                //$.ajax()是Jquery框架封装的请求AJAX
+                $.ajax({
+                    url:"http://localhost:8080/json_ajax_i18n/ajaxServlet",  //请求地址
+                    // data:"action=JqueryAjax",                    //请求参数，发送给服务器的数据
+                    data:{action:"JqueryAjax"},                  //格式也可以写成这样
+                    type:"GET",                                  //请求方法类型（GET,POST）
+                    success: function (data){                    //响应函数，data是服务器传过来的数据
+                        // alert("服务器传过来的数据:" + data)
+                        // var jsonObj = JSON.parse(data);  //把传送过来的数据手动转换成jquery
+                        $("#msg").html("编号:" + data.id + ",姓名:" + data.name);
+                    },
+                    // dataType: "text"                             //响应的数据类型：text，xml，jquery
+                    dataType: "json"                                //设置成json，自动传过来的数据data转换成json格式
+                })
+            });
+
+            //Jquery AJAX的 $.get()方法和$.post()方法
+            $("#getBtn").click(function (){
+                // $.get(url,data,callback,type)
+                $.get("http://localhost:8080/json_ajax_i18n/ajaxServlet",
+                      "action=getAjax",
+                       function (data){
+                           $("#msg").html("$.get() 编号:" + data.id + ",姓名:" + data.name);
+                       },
+                       "json"
+                )
+            });
+
+            //Jquery AJAX的 $.get()方法和$.post()方法
+            $("#postBtn").click(function (){
+                // $.get(url,data,callback,type)
+                $.post("http://localhost:8080/json_ajax_i18n/ajaxServlet",
+                    "action=postAjax",
+                    function (data){
+                        $("#msg").html("$.post() 编号:" + data.id + ",姓名:" + data.name);
+                    },
+                    "json"
+                )
+            });
+
+            //Jquery Ajax的 $.getJson()方法，得到的直接就是JSON数据，不需要设置type属性
+            $("#getJSONBTtn").click(function (){
+                // $.getJSON(url,data,callback)
+                $.getJSON("http://localhost:8080/json_ajax_i18n/ajaxServlet",
+                          "action=getJSONAjax",
+                           function (data){
+                               $("#msg").html("$.getJSONAjax() 编号:" + data.id + ",姓名:" + data.name);
+                           }
+                )
+            });
+
+            //serialize()方法，得到表单里面的内容并转换成JSON格式，发送给服务器
+            $("#submit").click(function (){
+                //把参数序列化
+               alert ($("#form01").serialize());
+
+
+                $.getJSON("http://localhost:8080/json_ajax_i18n/ajaxServlet",
+                    "action=Jqueryserialize&" + $("#form01").serialize(),
+                    function (data){
+                        $("#msg").html("$.Jqueryserialize() 编号:" + data.id + ",姓名:" + data.name);
+                    }
+                )
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+     <div>
+         <button id="ajaxBtn">$.ajax请求</button>
+         <button id="getBtn">$.get请求</button>
+         <button id="postBtn">$.post请求</button>
+         <button id="getJSONBTtn">$.getJSON请求</button>
+     </div>
+
+     <div id="msg">
+
+     </div>
+
+<br>
+     <form id="form01">
+         用户名:<input type="text" name="username" id="username"><br>
+         密码:<input type="password" name="password" id="password"><br>
+<!--         下拉单选:-->
+<!--         <select name="single">-->
+<!--             <option value="Single_1">Single_1</option>-->
+<!--             <option value="Single_2">Single_2</option>-->
+<!--         </select><br>s-->
+<!--         下拉多选:-->
+<!--         <select name="multiple" multiple="multiple">-->
+<!--             <option selected="selected" value="Multiple">Multiple</option>-->
+<!--             <option value="Multiple2">Multiple2</option>-->
+<!--             <option selected="selected" value="Multiple3">Multiple3</option>-->
+<!--         </select><br>-->
+<!--         复选:-->
+<!--         <input type="checkbox" name="check" value="check1">check1<br>-->
+<!--         <input type="checkbox" name="check" value="check1">check2<br>-->
+<!--         <input type="checkbox" name="check" value="check1">check3<br>-->
+<!--         单选:-->
+<!--         <input type="radio" name="radio" value="radio1">radio1<br>-->
+<!--         <input type="radio" name="radio" value="radio2">radio2<br>-->
+     </form>
+         <button id="submit">提交--serialize</button>
+</body>
+</html>

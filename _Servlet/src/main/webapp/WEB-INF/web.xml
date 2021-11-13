@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+<!-- 全局上下文属性，一个工程只能有一个servletContext   -->
+    <!--context-param属性只能由servletContext得到，不能被servletConfig得到-->
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>context</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
+
+
+
+
+    <!-- servlet标签给tomcat配置Servlet程序 -->
+    <servlet>
+<!--        servlet-name 标签给serlvet程序起一个别名(一般是类名)-->
+        <servlet-name>HelloServlet</servlet-name>
+<!--        servlet-class 是servlet程序的全类名-->
+        <servlet-class>com.example._Servlet.HelloServlet</servlet-class>
+
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>这个是username的值</param-value>
+        </init-param>
+    </servlet>
+
+<!--    serlvet-mapping标签给servlet程序配置访问地址-->
+    <servlet-mapping>
+<!--        servlet-name标签的作用是告诉服务器，我当前配置的地址给哪个Servlet程序使用-->
+        <servlet-name>HelloServlet</servlet-name>
+<!--        url-pattern 标签配置访问地址
+             / 斜杠在服务器解析的时候，表示地址为:http://ip:port/工程路径
+             /hello 表示地址为:http://ip:port/工程路径/hello
+             -->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HelloServlet_2</servlet-name>
+        <servlet-class>com.example._Servlet.HelloServlet_2</servlet-class>
+
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>这个是username2！！的值</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>HelloServlet_2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet_3</servlet-name>
+        <servlet-class>com.example._Servlet.HelloServlet_3</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet_3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletContext的配置-->
+    <servlet>
+        <servlet-name>ServletContext</servlet-name>
+        <servlet-class>com.example._Servlet.ServletContext</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletContext</servlet-name>
+        <url-pattern>/ServletContext</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletContext1的配置-->
+    <servlet>
+        <servlet-name>ServletContext1</servlet-name>
+        <servlet-class>com.example._Servlet.ServletContext1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletContext1</servlet-name>
+        <url-pattern>/ServletContext1</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletContext1的配置-->
+    <servlet>
+        <servlet-name>ServletContext2</servlet-name>
+        <servlet-class>com.example._Servlet.ServletContext2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletContext2</servlet-name>
+        <url-pattern>/ServletContext2</url-pattern>
+    </servlet-mapping>
+
+    <!--RequestAPIServlet的配置-->
+    <servlet>
+        <servlet-name>RequsetAPIServlet</servlet-name>
+        <servlet-class>com.example._Request.RequsetAPIServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RequsetAPIServlet</servlet-name>
+        <url-pattern>/RequsetAPIServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--ParameterServlet的配置-->
+    <servlet>
+        <servlet-name>ParameterServlet</servlet-name>
+        <servlet-class>com.example._Request.ParameterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ParameterServlet</servlet-name>
+        <url-pattern>/ParameterServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--ForwardServlet_1的配置-->
+    <servlet>
+        <servlet-name>ForwardServlet_1</servlet-name>
+        <servlet-class>com.example._Request.ForwardServlet_1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ForwardServlet_1</servlet-name>
+        <url-pattern>/ForwardServlet_1</url-pattern>
+    </servlet-mapping>
+
+    <!--ForwardServlet_2的配置-->
+    <servlet>
+        <servlet-name>ForwardServlet_2</servlet-name>
+        <servlet-class>com.example._Request.ForwardServlet_2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ForwardServlet_2</servlet-name>
+        <url-pattern>/ForwardServlet_2</url-pattern>
+    </servlet-mapping>
+
+    <!--ResponseUTFServlet的配置-->
+    <servlet>
+        <servlet-name>ResponseUTFServlet</servlet-name>
+        <servlet-class>com.example._Response.ResponseUTFServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ResponseUTFServlet</servlet-name>
+        <url-pattern>/ResponseUTFServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--Response_1的配置-->
+    <servlet>
+        <servlet-name>Response_1</servlet-name>
+        <servlet-class>com.example._Response.Response_1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Response_1</servlet-name>
+        <url-pattern>/Response_1</url-pattern>
+    </servlet-mapping>
+
+    <!--Response_2的配置-->
+    <servlet>
+        <servlet-name>Response_2</servlet-name>
+        <servlet-class>com.example._Response.Response_2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Response_2</servlet-name>
+        <url-pattern>/Response_2</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+</web-app>

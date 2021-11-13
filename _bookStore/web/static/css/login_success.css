@@ -1,0 +1,21 @@
+body{
+    background-color: antiquewhite;
+}
+
+#div_1{
+    margin:0 auto;
+    color: antiquewhite;
+    border: 1px solid black;
+    text-align: center;
+}
+#div_2{
+
+    color: antiquewhite;
+    border: 1px solid black;
+
+}
+
+
+h1{
+    color:black;
+}

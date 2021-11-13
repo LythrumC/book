@@ -1,0 +1,53 @@
+p{
+    margin: 0px 0px;
+    font-size: 50px;
+}
+
+#div_1{
+    border: solid 1px black;
+    width: 1300px;
+    height: 600px;
+    margin: 0px auto;
+    margin-top: 20px;
+    overflow: scroll;  /*滚动条*/
+    overflow-x: hidden;  /*横向滚动条隐藏*/
+}
+
+#div_2{
+    margin-top: 100px;
+}
+
+#div_3{
+    width: 300px;
+    height: 20px;
+    margin: 0px auto;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+table{
+
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+td{
+    font-family: 宋体;
+    border-bottom:1px solid gainsboro;
+}
+
+.td_com{
+    padding-left: 110px;
+}
+
+#td_action{
+    padding-left: 60px;
+}
+
+a{
+    color: blue;
+}
+
+#add_book{
+    margin-left: 1150px;
+}

@@ -1,0 +1,110 @@
+
+#div_1{
+    float: left;
+    margin-left: 100px;
+}
+
+#div_2{
+    float: right;
+    margin-top: 190px;
+    margin-right: 10px;
+}
+
+#div_3{
+    text-align: center;
+    width: full;
+    height: 700px;
+    border: 2px black solid;
+}
+
+#div_3_1{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+#page_nav{
+    margin-top: 450px;
+    margin-left: 450px;
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+#logo{
+    width: 450px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+a{
+    margin-left: -5px;
+    font-family: 宋体;
+    font-size: 20px;
+    color: blue;
+    text-decoration:none;
+}
+
+a:link{
+    color: black;
+}
+
+a:hover{
+    color: red;
+}
+
+input{
+    width: 50px;
+}
+
+
+.div_book{
+    margin-left: 56px;
+    font-family: 宋体;
+    float: left;
+    width: 300px;
+    height: 380px;
+    border: 1px solid black;
+}
+
+.img{
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+.book_name{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.book_author{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.book_price{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.book_sale{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.book_store{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.book_add{
+    margin-left: 20px;
+    text-align: left;
+}
+
+#footer{
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 500px;
+}

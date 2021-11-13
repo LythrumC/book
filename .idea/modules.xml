@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cookie_Session/Cookie_Session.iml" filepath="$PROJECT_DIR$/Cookie_Session/Cookie_Session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Filter/Filter.iml" filepath="$PROJECT_DIR$/Filter/Filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Web.iml" filepath="$PROJECT_DIR$/Java_Web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vertification/Vertification.iml" filepath="$PROJECT_DIR$/Vertification/Vertification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_EL/_EL.iml" filepath="$PROJECT_DIR$/_EL/_EL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_JSTL/_JSTL.iml" filepath="$PROJECT_DIR$/_JSTL/_JSTL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_Servlet/_Servlet.iml" filepath="$PROJECT_DIR$/_Servlet/_Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_bookStore/_bookStore.iml" filepath="$PROJECT_DIR$/_bookStore/_bookStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_jsp/_jsp.iml" filepath="$PROJECT_DIR$/_jsp/_jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_xml/_xml.iml" filepath="$PROJECT_DIR$/_xml/_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/json_ajax_i18n/json_ajax_i18n.iml" filepath="$PROJECT_DIR$/json_ajax_i18n/json_ajax_i18n.iml" />
+      <module fileurl="file://$PROJECT_DIR$/temp/temp.iml" filepath="$PROJECT_DIR$/temp/temp.iml" />
+    </modules>
+  </component>
+</project>

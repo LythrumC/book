@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book sn="SN12341232">
+        <name><![CDATA[《时间简史》]]></name>
+        <price>99.9</price>
+        <author>史蒂芬 霍金</author>
+    </book>
+
+    <book sn="SN123555">
+        <name><![CDATA[JAVA从入门到入土]]></name>
+        <price>123</price>
+        <author>无名氏</author>
+    </book>
+</books>
